@@ -18,29 +18,28 @@ const Home = (): JSX.Element => (
     >
       <Container alignItems="center" alignContent="center">
         <Image
-          src="/me.webp"
-          alt="Antoine Ordonez"
+          src="/me.png"
+          alt="Thomas Yau"
           width={120}
           height={120}
           objectFit="cover"
           className={styles.image}
         />
-        <Title>Antoine Ordonez</Title>
+        <Title>Thomas Yau</Title>
         <Title
           fontSize="2rem"
           color="rgba(0, 0, 0, 0.6)"
           fontWeight="500"
           as="h2"
         >
-          I build cloud software.
+          I craft enhanced digital experiences.
         </Title>
       </Container>
       <Container maxWidth="700px" gridGap="3rem">
         <Container>
           <Text textAlign="center">
-            I&apos;m a Full Stack developer with experience in DevOps, Backend,
-            Frontend and mobile development. Currently CTO of&nbsp;
-            <a href="https://shareview.fr">Shareview</a> and living in Paris.
+            I&apos;m a JavaScript Full Stack developer with experience in customized Shopify App Development. Currently Senior Software Engineer of&nbsp;
+            <a href="https://www.viewfi.io/">ViewFi</a> and living in Belgium.
           </Text>
         </Container>
         <Link href="/about">
@@ -55,8 +54,8 @@ const Home = (): JSX.Element => (
           Get in touch
         </Title>
         <Text textAlign="center">
-          Although I&apos;m not actively looking for job opportunities, my inbox
-          is still open for you. Feel free to ask me anything!
+          While I&apos;m not actively seeking job opportunities, I remain receptive to new possibilities. 
+          Feel free to reach out with any inquiries or questions!
         </Text>
         <Grid
           gridGap="2rem"

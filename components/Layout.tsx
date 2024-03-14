@@ -13,7 +13,7 @@ type LayoutProps = {
 };
 
 const Layout: React.FC<LayoutProps> = ({
-  title = 'Antoine Ordonez',
+  title = 'Thosmas Yau',
   children,
 }) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -24,20 +24,20 @@ const Layout: React.FC<LayoutProps> = ({
         <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta charSet="utf-8" />
-        <meta name="author" content="Antoine Ordonez" />
+        <meta name="author" content="Thomas Yau" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:title" content="Antoine Ordonez" />
+        <meta property="og:title" content="Thomas Yau" />
         <meta
           property="og:description"
-          content="I'm a Full Stack developer with experience in DevOps, Backend, Frontend and mobile development."
+          content="I'm a JavaScript Full Stack developer with experience in Customized Shopify App Development."
         />
         <meta property="og:type" content="website" />
-        <meta property="twitter:site" content="@_shellbear" />
+        <meta property="twitter:site" content="@" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
+        {/* <meta
           property="og:image"
           content="https://shellbear.me/img/preview.webp"
-        />
+        /> */}
         {process.env.NODE_ENV === 'production' && (
           <>
             <Script
