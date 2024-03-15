@@ -4,18 +4,24 @@ import { GetStaticProps } from 'next';
 import Head from 'next/head';
 
 import {
-  SiGo,
+  SiReact,
+  SiNodedotjs,
   SiKubernetes,
-  SiElixir,
   SiPostgresql,
   SiTypescript,
   SiAmazonaws,
   SiGooglecloud,
   SiTerraform,
-  SiReact,
   SiNextdotjs,
   SiPython,
   SiGraphql,
+  SiShopify,
+  SiVuedotjs,
+  SiVercel,
+  SiGit,
+  SiTailwindcss,
+  SiMongodb,
+  SiFigma 
 } from 'react-icons/si';
 import { getPosts, Post } from '@posts';
 import { TransparentLink } from '@components';
@@ -26,12 +32,36 @@ interface AboutProps {
 
 const stacks = [
   {
-    Icon: SiGo,
-    url: 'https://golang.org/',
+    Icon : SiVuedotjs,
+    url : 'https://vuejs.org/'
+  },
+  {
+    Icon : SiNodedotjs,
+    url : 'https://nodejs.org/en'
+  },
+  {
+    Icon : SiFigma,
+    url : 'https://www.figma.com/' 
+  },
+  {
+    Icon : SiVercel,
+    url : 'https://vercel.com/'
+  },
+  {
+    Icon : SiMongodb,
+    url : 'https://www.mongodb.com/'
+  },
+  {
+    Icon : SiTailwindcss,
+    url : 'https://tailwindcss.com/'
   },
   {
     Icon: SiKubernetes,
     url: 'https://kubernetes.io/',
+  },
+  {
+    Icon : SiGit,
+    url : 'https://git-scm.com/'
   },
   {
     Icon: SiTypescript,
@@ -54,8 +84,8 @@ const stacks = [
     url: 'https://nextjs.org/',
   },
   {
-    Icon: SiElixir,
-    url: 'https://elixir-lang.org/',
+    Icon: SiShopify,
+    url: 'https://www.shopify.com/',
   },
   {
     Icon: SiGooglecloud,
@@ -82,15 +112,12 @@ const About = ({ experiences }: AboutProps): JSX.Element => (
     </Head>
     <Container alignContent="center" alignItems="center">
       <Title fontSize={['3rem', '4rem']} as="h2">
-        CTO & passionate
+        Visionary & Trailblazer
       </Title>
       <Container maxWidth={['100%', '720px']} marginY="2rem">
-        <Text>I&apos;m a Full-Stack/DevOps developer living in Paris.</Text>
+        <Text>I&apos;m a Full-Stack/Shopify developer living in Beringen.</Text>
         <Text>
-          During my free time I like going gym, doing Bench Press, make design
-          and make video edits on After Effects. You can check some cool drone
-          edits on my&nbsp;
-          <a href="https://instagram.com/croissant2france">Instagram</a>.
+          During my free time I like going to the gym for fitness exercise, really enjoy playing futsal, and besides that, listening to podcasts which are eye-opening and insightful.
         </Text>
       </Container>
     </Container>
