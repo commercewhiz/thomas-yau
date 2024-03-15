@@ -32,12 +32,36 @@ interface AboutProps {
 
 const stacks = [
   {
+    Icon: SiReact,
+    url: 'https://reactjs.org/',
+  },
+  {
     Icon : SiVuedotjs,
     url : 'https://vuejs.org/'
   },
   {
+    Icon: SiTypescript,
+    url: 'https://www.typescriptlang.org/',
+  },
+  {
+    Icon: SiNextdotjs,
+    url: 'https://nextjs.org/',
+  },
+  {
     Icon : SiNodedotjs,
     url : 'https://nodejs.org/en'
+  },
+  {
+    Icon: SiShopify,
+    url: 'https://www.shopify.com/',
+  },
+  {
+    Icon: SiPython,
+    url: 'https://www.python.org/',
+  },
+  {
+    Icon : SiTailwindcss,
+    url : 'https://tailwindcss.com/'
   },
   {
     Icon : SiFigma,
@@ -52,40 +76,24 @@ const stacks = [
     url : 'https://www.mongodb.com/'
   },
   {
-    Icon : SiTailwindcss,
-    url : 'https://tailwindcss.com/'
-  },
-  {
-    Icon: SiKubernetes,
-    url: 'https://kubernetes.io/',
-  },
-  {
-    Icon : SiGit,
-    url : 'https://git-scm.com/'
-  },
-  {
-    Icon: SiTypescript,
-    url: 'https://www.typescriptlang.org/',
-  },
-  {
-    Icon: SiReact,
-    url: 'https://reactjs.org/',
+    Icon: SiPostgresql,
+    url: 'https://www.postgresql.org/',
   },
   {
     Icon: SiGraphql,
     url: 'https://graphql.org/',
   },
   {
+    Icon : SiGit,
+    url : 'https://git-scm.com/'
+  },
+  {
+    Icon: SiKubernetes,
+    url: 'https://kubernetes.io/',
+  },
+  {
     Icon: SiAmazonaws,
     url: 'https://aws.amazon.com/',
-  },
-  {
-    Icon: SiNextdotjs,
-    url: 'https://nextjs.org/',
-  },
-  {
-    Icon: SiShopify,
-    url: 'https://www.shopify.com/',
   },
   {
     Icon: SiGooglecloud,
@@ -94,14 +102,6 @@ const stacks = [
   {
     Icon: SiTerraform,
     url: 'https://www.terraform.io/',
-  },
-  {
-    Icon: SiPostgresql,
-    url: 'https://www.postgresql.org/',
-  },
-  {
-    Icon: SiPython,
-    url: 'https://www.python.org/',
   },
 ];
 
