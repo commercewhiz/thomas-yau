@@ -156,9 +156,9 @@ const About = ({ experiences }: AboutProps): JSX.Element => (
       paddingBottom="4rem"
       gridGap="3rem"
     >
-      <Title fontSize="40px" as="h2">
+      {/* <Title fontSize="40px" as="h2">
         Work Experiences
-      </Title>
+      </Title> */}
       <Container width="100%">
         {experiences.map(({ data }, i) => (
           <TransparentLink href={`/about/${data.slug}`} key={data.slug}>

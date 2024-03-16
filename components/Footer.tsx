@@ -47,7 +47,7 @@ const links = [
     icon: Malt,
   },
   {
-    url: 'https://linkedin.com/in/',
+    url: 'https://www.linkedin.com/in/thomas-yau-a280592bb/',
     icon: SiLinkedin,
   },
   {
