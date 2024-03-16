@@ -31,27 +31,27 @@ const FooterGrid = styled.div`
 
 const links = [
   {
-    url: 'https://github.com/shellbear',
+    url: 'https://github.com/commercewhiz',
     icon: SiGithub,
   },
   {
-    url: 'https://twitter.com/_shellbear',
+    url: 'https://twitter.com/',
     icon: SiTwitter,
   },
   {
-    url: 'mailto:hello@shellbear.me',
+    url: 'mailto:commercewhiz620@gmail.com',
     icon: MdMail,
   },
   {
-    url: 'https://www.malt.fr/profile/antoineordonez',
+    url: 'https://www.malt.fr/profile/',
     icon: Malt,
   },
   {
-    url: 'https://linkedin.com/in/antoine-ordonez',
+    url: 'https://linkedin.com/in/',
     icon: SiLinkedin,
   },
   {
-    url: 'https://instagram.com/croissant2france',
+    url: 'https://instagram.com/',
     icon: Instagram,
   },
 ];
@@ -63,7 +63,7 @@ const Footer = (): JSX.Element => (
         <Link href="/">Home</Link>
         <Link href="/about">About</Link>
         <Link href="/projects">Projects</Link>
-        <Link href="mailto:hello@shellbear.me">Contact</Link>
+        <Link href="mailto:commercewhiz620@gmail.com">Contact</Link>
       </Grid>
     </Container>
     <FooterGrid>
