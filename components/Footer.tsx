@@ -39,7 +39,7 @@ const links = [
     icon: SiTwitter,
   },
   {
-    url: 'mailto:commercewhiz620@gmail.com',
+    url: 'mailto:talk.30mins2thomas@gmail.com',
     icon: MdMail,
   },
   {
@@ -63,7 +63,7 @@ const Footer = (): JSX.Element => (
         <Link href="/">Home</Link>
         <Link href="/about">About</Link>
         <Link href="/projects">Projects</Link>
-        <Link href="mailto:commercewhiz620@gmail.com">Contact</Link>
+        <Link href="mailto:talk.30mins2thomas@gmail.com">Contact</Link>
       </Grid>
     </Container>
     <FooterGrid>
