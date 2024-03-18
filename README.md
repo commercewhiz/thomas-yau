@@ -8,26 +8,6 @@
 
 ## Running Locally
 
-### Installation
-
-1. Clone this repo
-
-```bash
-git clone git@github.com:dlarroder/dalelarroder.git
-```
-
-2. Change directory
-
-```sh
-cd dalelarroder
-```
-
-3. Install yarn packages
-
-```bash
-yarn
-```
-
 1. Create a `.env.local` file following the `.env.example`
 
 ```bash
@@ -75,4 +55,4 @@ Prevoius v1 version:
 
 ## Licence
 
-[MIT](https://github.com/dlarroder/dalelarroder/blob/master/LICENSE) © [Dale Larroder](https://www.dalelarroder.com)
+[MIT](https://github.com/dlarroder/dalelarroder/blob/master/LICENSE) © [Thomas Yau](https://www.dalelarroder.com)

@@ -1,9 +1,9 @@
 {
-  "name": "dalelarroder.com",
+  "name": "thomas-yau.com",
   "version": "2.0.0",
   "private": true,
   "scripts": {
-    "dev": "contentlayer dev & next dev",
+    "dev": "next dev",
     "build": "next build",
     "postbuild": "yarn rss",
     "rss": "cross-env NODE_OPTIONS='--experimental-json-modules' node ./scripts/generate-rss.mjs",
