@@ -34,8 +34,8 @@ export default function Hero(): ReactElement {
               <h1 className="text-5xl font-semibold sm:text-7xl md:text-8xl xl:text-9xl">
                 Thomas Yau
               </h1>
-              <h2 className="text-3xl font-medium opacity-80 sm:text-6xl md:text-6xl xl:text-7xl">
-                I build things for the web.
+              <h2 className="text-3xl font-medium opacity-80 sm:text-4xl md:text-5xl xl:text-6xl">
+                I build things to improve people's lives.
               </h2>
               <Link
                 href="/about"
