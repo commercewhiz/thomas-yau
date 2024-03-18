@@ -1,0 +1,59 @@
+---
+import heroImage from "../assets/headshot-1.jpg";
+import Link, { type LinkStyle } from "@components/ui/link.astro";
+import { Icon } from "astro-icon";
+import config from "@utils/config";
+import { Image } from "astro:assets";
+
+const headline = config.hero.headline;
+const subtitle = config.hero.subtitle;
+const ctas = config.hero.ctas;
+//export const prerender = true;
+---
+
+<main
+  class="grid md:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
+  <div class="py-6 md:order-2">
+    <Image
+      src={heroImage}
+      alt="Audrey Downey - Javascript full-stack developer"
+      sizes="(max-width: 600px) 100vw, 300px"
+      loading="eager"
+      class="rounded-full max-w-[300px]"
+      width={600}
+      height={600}
+    />
+  </div>
+  <div>
+    <h1
+      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
+      {headline}
+    </h1>
+    <p class="text-lg mt-4 text-slate-600 max-w-xl">
+      {subtitle}
+    </p>
+    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+      {
+        ctas.map((cta) => {
+          return (
+            <Link
+              href={cta.href}
+              target={cta.target}
+              class={cta.class}
+              rel={cta.rel || "noopener"}
+              style={cta.style as LinkStyle}
+              size={cta.size}
+              download={cta?.download && cta.download}>
+              <Icon
+                class={cta.icon && cta.icon.class}
+                name={cta.icon && cta.icon.name}
+              />
+
+              {cta.label}
+            </Link>
+          );
+        })
+      }
+    </div>
+  </div>
+</main>

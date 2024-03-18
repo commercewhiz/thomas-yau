@@ -1,0 +1,188 @@
+---
+import aboutImage from "../assets/oodri-laptop.jpg";
+import Container from "@components/container.astro";
+import ProjectCards from "@components/project-cards.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Link from "@components/ui/link.astro";
+import Layout from "@layouts/Layout.astro";
+import { Icon } from "astro-icon";
+import { Image } from "astro:assets";
+import { getCollection, getEntry } from "astro:content";
+
+// Filter portfolio entries with 'draft: false' & date before current date
+const publishedPortfolioEntries = await getCollection(
+  "portfolio",
+  ({ data }) => {
+    return !data.draft && data.publishDate < new Date();
+  },
+);
+
+function filterByCategory(entries, category) {
+  if (category === "") return entries;
+  if (category === "Featured")
+    return entries.filter((entry) => entry.data.featured);
+  return entries.filter((entry) => {
+    return entry.data.category === category;
+  });
+}
+
+const education = [
+  {
+    title: "Full-stack Open Course",
+    location: "University of Helsinki",
+    years: "2023-now",
+    description:
+      "I'm currently studying modern full-stack development in this course endorsed by Houston, Unity & Terveystalo.  I have obtained the certificat  for parts 1 to 8.",
+  },
+  {
+    title: "Computer Science (Bachelor's Studies)",
+    location: "University of Laval",
+    years: "2016-2017",
+    description:
+      "I took Bachelor's level courses and learned the basics of programming (Python), OOP (C++), relational modelling (UML) and the basics of computing and Assembly (ARM).",
+  },
+  {
+    title: "Bachelor's Degree in Music",
+    location: "University of Montreal",
+    years: "2012-2016",
+    description:
+      "I obtained a Bachelor's Degree in music, specialized in harp & classical singing performance.",
+  },
+];
+
+const technologies = [
+  { label: "HTML & CSS", type: "frontend" },
+  { label: "ReactJS", type: "frontend" },
+  { label: "NextJS", type: "framework" },
+  { label: "Javascript", type: "frontend" },
+  { label: "Typescript", type: "frontend" },
+  { label: "Tailwind", type: "frontend" },
+  { label: "Wordpress", type: "framework" },
+  { label: "Figma", type: "design" },
+  { label: "Github/Git", type: "tool" },
+  { label: "CI/CD", type: "tool" },
+  { label: "NodeJS", type: "tool" },
+  { label: "ExpressJS", type: "backend" },
+  { label: "REST API", type: "backend" },
+  { label: "GraphQL & Apollo", type: "backend" },
+  { label: "MongoDB", type: "backend" },
+  { label: "Framer Motion", type: "library" },
+  { label: "NextAuthJS", type: "library" },
+];
+
+const languages = [
+  { label: "English", level: "native/fluent" },
+  { label: "French", level: "native/fluent" },
+  { label: "Finnish", level: "intermediate - B.2" },
+];
+
+const page = await getEntry("page", "about");
+const { Content } = await page.render();
+
+const sortedProjects = publishedPortfolioEntries.sort((a, b) =>
+  a.data.publishDate > b.data.publishDate ? -1 : 1,
+);
+---
+
+<Layout title="Resume">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">About</Fragment>
+      <Fragment slot="desc">
+        Audrey Downey, Full-stack Javascript Developer & UI/UX Designer
+      </Fragment>
+    </Sectionhead>
+
+    <div
+      class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8 max-w-4xl mt-8 px-6">
+      <div
+        class="col-span-2 prose prose-p:leading-relaxed prose-p:text-slate-500 prose-p:mt-3 prose-p:mb-0">
+        <Content />
+      </div>
+      <div class="w-full flex justify-center">
+        <Image
+          src={aboutImage}
+          alt="Astronaut in the air"
+          sizes="(max-width: 300px) 100vw, 300px"
+          loading="eager"
+          width={200}
+          height={300}
+          class="rounded-md object-cover shadow-md"
+        />
+      </div>
+    </div>
+  </Container>
+
+  <div
+    id="education-and-skills-section"
+    class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16 print:grid-cols-2 print:break-before-page print:pt-16">
+    <div>
+      <h2 class="font-bold text-2xl text-gray-800">Education</h2>
+
+      <ul>
+        {
+          education.map((item) => {
+            return (
+              <li>
+                <h3 class="font-medium text-xl text-gray-800 mt-5">
+                  {item.title}
+                </h3>
+                <div class="flex items-center mt-2 space-x-2 text-gray-600">
+                  <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
+                  <span>
+                    {item.location}, {item.years}
+                  </span>
+                </div>
+
+                <p class="flex items-center mt-2 space-x-2 text-slate-500">
+                  {item.description}
+                </p>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+    <div>
+      <div>
+        <h2 class="font-bold text-2xl text-gray-800">Skills</h2>
+        <div class="pt-5 flex flex-wrap gap-2">
+          {
+            technologies.map((skill) => {
+              return (
+                <li class="bg-slate-100 text-gray-800 py-1 px-2 rounded-md list-none">
+                  {skill.label}
+                </li>
+              );
+            })
+          }
+        </div>
+      </div>
+      <h2 class="font-bold text-2xl text-gray-800 mt-8">Languages</h2>
+      <div class="pt-5 flex flex-wrap gap-2">
+        {
+          languages.map((skill) => {
+            return (
+              <li class="bg-slate-100 text-gray-800 py-1 px-2 rounded-md list-none">
+                {skill.label}
+                <span class="text-sm text-gray-500">({skill.level})</span>
+              </li>
+            );
+          })
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="flex justify-center pt-12 gap-3 print:hidden">
+    <Link href="/contact" style="outline">Get In Touch</Link>
+    <Link href="/projects/">View Portfolio Projects</Link>
+  </div>
+  <!-- for print only -->
+  <div class="justify-center pt-12 gap-3 hidden print:flex">
+    <Link href="http://www.oodri.dev/contact" style="outline">
+      Get In Touch
+    </Link>
+    <Link href="http://www.oodri.dev/projects/">View More Projects</Link>
+  </div>
+</Layout>

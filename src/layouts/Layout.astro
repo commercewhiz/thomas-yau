@@ -1,0 +1,103 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import { SEO } from "astro-seo";
+import Footer from "@components/footer.astro";
+import Navbar from "@components/navbar/navbar.astro";
+import "@fontsource-variable/inter/index.css";
+import "@utils/style.css";
+
+export interface Props {
+  title: string;
+  openGraphImage?: string;
+  description?: string;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+const resolvedImageWithDomain = new URL(
+  "/opengraph.jpg",
+  Astro.site,
+).toString();
+
+const {
+  title,
+  description,
+  openGraphImage = resolvedImageWithDomain,
+} = Astro.props;
+
+const makeTitle = title
+  ? title + " | " + "Oodri"
+  : "Oodri - Web developer & UI/UX Designer";
+const defaultDescription =
+  "👋 Hey there!  I'm Oodri, a web developer based in Helsinki!";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
+    <SEO
+      title={makeTitle}
+      description={description || defaultDescription}
+      canonical={canonicalURL}
+      openGraph={{
+        basic: {
+          url: canonicalURL,
+          type: "website",
+          title: `${title}`,
+          image: openGraphImage,
+        },
+        optional: {
+          description: description,
+          siteName: "Oodri | Web Developer & UI/UX Designer",
+        },
+        image: {
+          alt: title,
+        },
+      }}
+    />
+    <ViewTransitions />
+  </head>
+  <body>
+    <Navbar />
+
+    <slot />
+
+    <Footer />
+    <style is:global>
+      /* Improve Page speed */
+      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
+      img {
+        content-visibility: auto;
+      }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <style is:global>
+      /* Improve Page speed */
+      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
+      img {
+        content-visibility: auto;
+      }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JYRTH2EKDV"
+    ></script>
+    <script>
+      // @ts-ignore
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        // @ts-ignore
+        dataLayer.push(arguments);
+      }
+      // @ts-ignore
+      gtag("js", new Date());
+      // @ts-ignore
+      gtag("config", "G-JYRTH2EKDV");
+    </script>
+  </body>
+</html>

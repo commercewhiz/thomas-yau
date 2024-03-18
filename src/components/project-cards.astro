@@ -1,0 +1,38 @@
+---
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon";
+import Button from "./ui/button.astro";
+
+const entry = Astro.props.entry;
+---
+
+<li class="flex flex-col gap-3 py-3">
+  <a class="" href={`/projects/${entry.slug}`}>
+    <h3
+      class="font-bold text-xl text-gray-800 hover:text-gray-500 transition-all">
+      {entry.data.title}
+    </h3>
+  </a>
+  <div class="flex flex-col items-middle">
+    <div class="flex space-x-2 text-gray-500 text-sm align-middle italic">
+      <Icon
+        class="w-5 shrink-0 flex align-middle"
+        name="fluent:person-20-filled"
+      />
+      <span class="m-1">{entry.data.role}</span>
+    </div>
+    <div class="flex space-x-2 text-gray-500 text-sm align-middle italic">
+      <Icon class="w-5 shrink-0 flex align-middle" name="mdi:calendar" />
+      <span class="m-1">{entry.data.timeline}</span>
+    </div>
+  </div>
+
+  <p
+    class="flex items-start space-x-2 text-slate-500 mt-2 leading-relaxed grow">
+    {entry.data.snippet}
+  </p>
+
+  <Link style="subtle" size="md" href={`projects/${entry.slug}`}>
+    Read More
+  </Link>
+</li>

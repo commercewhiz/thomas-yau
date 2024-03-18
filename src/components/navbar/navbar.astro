@@ -1,0 +1,66 @@
+---
+import Container from "@components/container.astro";
+import Dropdown from "./dropdown.astro";
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import { Icon } from "astro-icon";
+import config from "@utils/config";
+
+const nav = config.nav;
+---
+
+<Container>
+  <header class="flex flex-col sm:flex-row justify-between items-center my-5">
+    <Astronav>
+      <div class="flex w-full sm:w-auto items-center justify-between">
+        <a href="/" class="text-lg flex items-center gap-2">
+          <Icon class="h-8" name="ion:game-controller" />
+          <div>
+            <span class="font-bold text-slate-800">Oodri</span><span
+              class="text-slate-500">.dev</span
+            >
+          </div>
+        </a>
+        <div class="block sm:hidden">
+          <MenuIcon class="w-6 h-6 text-gray-800" />
+        </div>
+      </div>
+      <MenuItems class="hidden w-full sm:w-auto mt-2 sm:flex sm:mt-0">
+        <ul class="flex flex-col sm:flex-row sm:gap-3 print:hidden">
+          {
+            nav.map((item, index) => (
+              <>
+                {item.children && (
+                  <Dropdown
+                    title={item.title}
+                    children={item.children}
+                    lastItem={index === nav.length - 1}
+                  />
+                )}
+
+                {!item.children && (
+                  <li>
+                    <a
+                      href={item.path}
+                      class="flex sm:px-3 py-2 text-gray-600 hover:text-gray-900 ">
+                      {item.title}
+                    </a>
+                  </li>
+                )}
+              </>
+            ))
+          }
+        </ul>
+        <!-- <div class="sm:hidden flex items-center mt-3 gap-4">
+          <Link href="#" style="muted" block size="md">Log in</Link>
+          <Link href="#" size="md" block>Sign up</Link>
+        </div> -->
+      </MenuItems>
+    </Astronav>
+    <!-- <div>
+      <div class="hidden sm:flex items-center gap-4">
+        <a href="#">Log in</a>
+        <Link href="#" size="md">Sign up</Link>
+      </div>
+    </div> -->
+  </header>
+</Container>

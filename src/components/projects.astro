@@ -1,0 +1,91 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon";
+
+const title = "Projects";
+const description = "Top projects I have worked on";
+
+const skills = [
+  {
+    title: "UI/UX Design",
+    description:
+      "Figma, Adobe Photoshop, Affinity, Canva, Pro Create, Inkscape.",
+    icon: "ph:paint-brush-fill",
+  },
+  {
+    title: "Front-end",
+    description: "React, NextJS 13, Typescript, Tailwind, Radix UI, Astro.",
+    icon: "ph:code-bold",
+  },
+  {
+    title: "Back-end & Database",
+    description: "NextJS 13, SSR with React, Node.js, Express, MongoDB.",
+    icon: "bx:bxs-data",
+  },
+  {
+    title: "CMS & E-Commerce",
+    description: "Contentful, Shopify, Wordpress, Woocommerce.",
+    icon: "mdi:cart-outline",
+  },
+  {
+    title: "Deployment & Hosting",
+    description: "Fly.io, Vercel, Github Pages",
+    icon: "akar-icons:vercel-fill",
+  },
+  {
+    title: "Others Tools",
+    description: "Git, Github, VSCode, DaVinci Resolve, Pro Tools, Studio One",
+    icon: "tabler:tool",
+  },
+];
+
+import { getCollection, getEntry } from "astro:content";
+import PortfolioEntries from "./portfolio-entries.astro";
+import ProjectCards from "./project-cards.astro";
+import Link from "./ui/link.astro";
+
+// Filter portfolio entries with 'draft: false' & date before current date
+const publishedPortfolioEntries = await getCollection(
+  "portfolio",
+  ({ data }) => {
+    return !data.draft && data.publishDate < new Date();
+  },
+);
+
+function filterByCategory(entries, category) {
+  if (category === "") return entries;
+  if (category === "Featured")
+    return entries.filter((entry) => entry.data.featured);
+  return entries.filter((entry) => {
+    return entry.data.category === category;
+  });
+}
+
+const sortedProjects = publishedPortfolioEntries.sort((a, b) =>
+  a.data.publishDate > b.data.publishDate ? -1 : 1,
+);
+---
+
+<div class="flex flex-col gap-8 my-16">
+  <div class="flex flex-col gap-4">
+    <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+      {title}
+    </h2>
+    <p class="text-lg mt-4 text-slate-600">
+      {description}
+    </p>
+  </div>
+
+  <div class="">
+    <ul class="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
+      {
+        filterByCategory(sortedProjects, "Featured").map((entry, i) => {
+          if (i < 3) return <ProjectCards entry={entry} />;
+        })
+      }
+    </ul>
+    <div class="flex justify-center pt-12 gap-5ww print:hidden">
+      <Link href="/projects/">See More Projects</Link>
+    </div>
+  </div>
+</div>

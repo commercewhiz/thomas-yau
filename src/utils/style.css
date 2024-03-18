@@ -1,0 +1,10 @@
+ul.contains-task-list {
+  padding: 0;
+}
+
+li.task-list-item {
+  list-style-type: none; /* Remove bullets */
+}
+li > input {
+  margin: 1rem 1rem 0 0 !important;
+}
