@@ -22,6 +22,15 @@ export default function Hero(): ReactElement {
     renderCanvas();
   }, []);
 
+  const handleDownload = () => {
+    const resumeUrl = '/static/resume.pdf';
+
+    const link = document.createElement('a');
+    link.href = resumeUrl;
+    link.download = 'resume.pdf'; // Set the desired file name
+    link.click();
+  };
+
   return (
     <div>
       <h1 className="sr-only">
@@ -37,12 +46,21 @@ export default function Hero(): ReactElement {
               <h2 className="text-3xl font-medium opacity-80 sm:text-4xl md:text-5xl xl:text-6xl">
                 I build things to improve people's lives.
               </h2>
-              <Link
-                href="/about"
-                className="underline-magical text-md w-max cursor-pointer sm:text-lg md:text-xl xl:text-2xl"
-              >
-                Read more about me &rarr;
-              </Link>
+              <div className="flex  gap-10">
+                <Link
+                  href="/about"
+                  className="underline-magical text-md w-max cursor-pointer sm:text-lg md:text-xl xl:text-2xl"
+                >
+                  Read more about me &rarr;
+                </Link>
+                <br />
+                <button
+                  onClick={handleDownload}
+                  className="underline-magical text-md w-max cursor-pointer sm:text-lg md:text-xl xl:text-2xl"
+                >
+                  Download resume &rarr;
+                </button>
+              </div>
             </div>
             <motion.div
               animate={{

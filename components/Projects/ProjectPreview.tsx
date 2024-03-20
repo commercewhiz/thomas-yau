@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
-import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { Project, ProjectModal } from './types';
 
@@ -27,8 +26,8 @@ const scaleAnimation = {
   },
 };
 
-export default function ProjectPreview({ modal, projects }: ProjectModalProps) {
-  const { active, index } = modal;
+export default function ProjectPreview({ modal }: ProjectModalProps) {
+  const { active } = modal;
   const modalContainer = useRef<HTMLDivElement>(null);
   const cursor = useRef<HTMLDivElement>(null);
   const cursorLabel = useRef<HTMLDivElement>(null);
@@ -73,37 +72,6 @@ export default function ProjectPreview({ modal, projects }: ProjectModalProps) {
 
   return (
     <>
-      <motion.div
-        className="pointer-events-none absolute flex h-[350px] w-[400px] items-center justify-center overflow-hidden bg-white"
-        ref={modalContainer}
-        variants={scaleAnimation}
-        initial="initial"
-        animate={active ? 'enter' : 'closed'}
-      >
-        <div
-          className="absolute h-full w-full"
-          style={{ top: index * -100 + '%', transition: 'top 0.6s cubic-bezier(0.76, 0, 0.24, 1)' }}
-        >
-          {projects.map((project, index) => {
-            const { src, color } = project;
-            return (
-              <div
-                className="flex h-full w-full items-center justify-center"
-                style={{ backgroundColor: color }}
-                key={`modal_${index}`}
-              >
-                <Image
-                  className="h-auto"
-                  src={`/static/images/project/${src}`}
-                  width={300}
-                  height={300}
-                  alt="image"
-                />
-              </div>
-            );
-          })}
-        </div>
-      </motion.div>
       <motion.div
         className="font-base pointer-events-none absolute z-10 flex h-16 w-16 items-center justify-center rounded-full bg-primary-500 font-light text-white"
         ref={cursor}

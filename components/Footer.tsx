@@ -1,7 +1,8 @@
 import siteMetadata from 'content/siteMetadata';
 import Link from 'next/link';
-import { AiFillLinkedin } from 'react-icons/ai';
-import { FaGithub, FaTwitter } from 'react-icons/fa';
+import { BiSolidPhoneCall } from 'react-icons/bi';
+import { FaGithub } from 'react-icons/fa';
+import { IoMailOpenSharp } from 'react-icons/io5';
 import SectionContainer from './SectionContainer';
 
 export default function Footer() {
@@ -19,13 +20,8 @@ export default function Footer() {
             </ul>
             <ul className="flex cursor-pointer items-center space-x-5">
               <li>
-                <a
-                  href={siteMetadata.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="linkedin"
-                >
-                  <AiFillLinkedin className="sm:text-lg" />
+                <a href={siteMetadata.gmail} target="_blank" rel="noreferrer" aria-label="gmail">
+                  <BiSolidPhoneCall className="sm:text-lg" />
                 </a>
               </li>
               <li>
@@ -34,13 +30,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href={siteMetadata.twitter}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="twitter"
-                >
-                  <FaTwitter className="sm:text-lg" />
+                <a href={siteMetadata.email} target="_blank" rel="noreferrer" aria-label="twitter">
+                  <IoMailOpenSharp className="sm:text-lg" />
                 </a>
               </li>
             </ul>

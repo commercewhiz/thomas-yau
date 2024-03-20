@@ -32,7 +32,7 @@ export default function Header() {
           </div>
           <div className="flex items-center space-x-3 text-base leading-5">
             <div className="hidden space-x-5 sm:flex">
-              {headerNavLinks.map(({ title, href }) => {
+              {headerNavLinks.map(({ title, href, target }) => {
                 const active = pathName?.includes(href);
                 return (
                   <Link
@@ -43,6 +43,7 @@ export default function Header() {
                       'horizontal-underline-active': active,
                     })}
                     aria-label={title}
+                    target={target}
                   >
                     <span className="font-semibold tracking-wide text-gray-900 dark:text-gray-100">
                       {title}

@@ -8,10 +8,9 @@ const siteMetadata = {
   siteUrl: 'https://dalelarroder.com',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
-  email: 'talk30mins.thomas@gmail.com',
+  email: 'mailto:talk30mins.thomas@gmail.com',
   github: 'https://github.com/commercewhiz',
-  twitter: 'https://twitter.com/',
-  linkedin: 'https://www.linkedin.com/in/',
+  gmail: 'https://calendly.com/talk30mins-thomas/30min',
   locale: 'en-US',
   comment: {
     provider: 'giscus',
