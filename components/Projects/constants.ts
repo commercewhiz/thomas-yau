@@ -2,11 +2,11 @@ import { Project } from './types';
 
 export const projects: Project[] = [
   {
-    title: 'Aphex Planner',
+    title: 'Chatlabz',
     src: 'planner-app.webp',
     color: '#dbeafe',
-    url: 'https://app.aphex.co/',
-    role: 'Fullstack Developer',
+    url: 'https://chatlabz.com',
+    role: 'Full Stack Developer (AI integration)',
   },
   {
     title: 'Aphex Field',
