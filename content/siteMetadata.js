@@ -5,7 +5,7 @@ const siteMetadata = {
   description: 'Software Developer at Viewfi',
   language: 'en-us',
   theme: 'dark', // system, dark or light
-  siteUrl: 'https://dalelarroder.com',
+  siteUrl: 'https://thomas-yau.vercel.app/',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
   email: 'mailto:talk30mins.thomas@gmail.com',

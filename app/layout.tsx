@@ -11,7 +11,7 @@ import ThemeProvider from '@/components/Providers/ThemeProvider';
 export const metadata = {
   title: 'Thomas Yau',
   description: 'I build things for the web.',
-  metadataBase: new URL('https://dalelarroder.com'),
+  metadataBase: new URL('https://thomas-yau.vercel.app/.com'),
 };
 
 interface RootLayoutProps {
