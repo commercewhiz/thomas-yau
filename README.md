@@ -1,4 +1,6 @@
-# dalelarroder.com ⚡️
+# https://thomas-yau.vercel.app/
+
+⚡️
 
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Deployment**: [Vercel](https://vercel.com)
@@ -40,10 +42,6 @@ Don't forget to give the project a star! Thanks again!
 2. Commit your Changes (`git commit -m 'Add some Feature'`)
 3. Push to the Branch (`git push origin main`)
 4. Open a Pull Request
-
-## Lighthouse Score
-
-![Screen Shot 2022-07-04 at 10 52 02 AM](https://user-images.githubusercontent.com/52998821/177234494-f6bc0203-ba71-4f59-8eb7-6375e3784b31.png)
 
 ## Licence
 
